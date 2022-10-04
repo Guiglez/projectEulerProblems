@@ -168,9 +168,9 @@ def problem13():
     return str(s)[0:10]
 ```
 
-## Problem 15
+## Problem 16
 
 ```py
-def problem15():
+def problem16():
     return sum([int(i) for i in str(pow(2,1000))])
 ```
