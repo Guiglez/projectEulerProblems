@@ -168,9 +168,72 @@ def problem13():
     return str(s)[0:10]
 ```
 
+## Problem 14
+
+```py
+def problem14():
+    number = 0
+    savedIter = 0
+    for i in range(1, 1000001):
+        iaux = i
+        iter = 1
+        while(True):
+            iter += 1
+            if(iaux == 1):
+                break
+            iaux = (iaux/2) if (iaux%2 == 0) else (3 * iaux + 1)
+        if(iter>savedIter):
+            savedIter = iter
+            number = i
+    return number
+```
+
 ## Problem 16
 
 ```py
 def problem16():
     return sum([int(i) for i in str(pow(2,1000))])
+```
+
+## Problem 20
+
+```py
+def problem20(n):
+    factorial = 1
+    for i in range(1, n+1):
+        factorial *= i
+    return sum([int(i) for i in str(factorial)])
+```
+
+## Problem 25
+
+```py
+def problem25(n):
+    fib1, fib2, index = 1, 1, 2
+    while(True):
+        index += 1
+        fib2, fib1 = fib2+fib1, fib2
+        if(len(str(fib2)) == n):
+            return index
+```
+
+## Problem 30
+
+```py
+def problem30():
+    """
+    We can find out the maximun possible sum for a given number of digits by multiplying
+    9^5 by the number of digits. If 9^5 * number of digits < number, wont find any other
+    number whitch fullfill the condition
+    """
+    v = []
+    i = 2
+    while(True):
+        i += 1
+        if(i == sum([pow(int(j), 5) for j in str(i)])):
+            print(i)
+            v.append(i)
+        if(pow(9, 5)*len(str(i)) < i):
+            break
+    return sum(v)
 ```
