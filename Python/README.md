@@ -237,3 +237,52 @@ def problem30():
             break
     return sum(v)
 ```
+
+## Problem 34
+
+```py
+# With n = 100000, dunno why
+def factorial(n):
+    fac = 1
+    for i in range(1, n+1):
+        fac *= i
+    return fac
+
+def factorialSum(vs):
+    facSum = 0
+    for i in vs:
+        facSum += factorial(i)
+    return facSum
+
+def problem36(n):
+    s = 0
+    for i in range(3, n):
+        if(i == factorialSum([int(n) for n in str(i)])):
+            s += i
+    return s
+```
+
+## Problem 36
+
+```py
+def problem36(n):
+    s = 0
+    for i in range(n):
+        if(str(i) == str(i)[::-1] and bin(i)[2:] == bin(i)[2:][::-1]):
+            s +=i
+    return s
+```
+
+## Problem 40
+
+```py
+def problem40():
+    decimals = ""
+    i, product1n = 1, 1
+    while(len(decimals) < 1000000):
+        decimals = decimals + str(i)
+        i += 1
+    for i in [10**n for n in range(7)]:
+        product1n *= int(decimals[i-1])
+    return product1n
+```
