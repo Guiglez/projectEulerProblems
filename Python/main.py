@@ -1,8 +1,7 @@
 import problems
 
 def main():
-    pass
+    print(problems.problem1())
 
-if __name__ == 'main':
+if __name__ == '__main__':
     main()
-    
